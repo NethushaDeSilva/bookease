@@ -38,7 +38,7 @@
                             <span class="text-5xl font-extrabold leading-tight tracking-[-0.04em] xl:text-6xl">
                                 Welcome back to
                                 <span class="bg-gradient-to-r from-cyan-300 to-indigo-300 bg-clip-text text-transparent">
-                                    effortless booking.
+                                    BookEase.
                                 </span>
                             </span>
                         </x-slot:title>
