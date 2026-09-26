@@ -11,6 +11,12 @@ export default {
         './resources/views/**/*.blade.php',
     ],
 
+    // Corner-radius convention for this app (not enforced via theme overrides,
+    // since Jetstream/vendor views rely on Tailwind's default scale):
+    // rounded-md   -> inputs, checkboxes, small badges/tags
+    // rounded-lg   -> buttons
+    // rounded-xl   -> cards, panels
+    // rounded-2xl+ -> marketing/auth hero surfaces only
     theme: {
         extend: {
             fontFamily: {

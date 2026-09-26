@@ -19,7 +19,7 @@
                 ];
             @endphp
             @foreach ($metricCards as [$label, $count, $classes, $caption])
-                <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div class="flex items-start justify-between">
                         <div>
                             <p class="text-sm font-semibold text-slate-500">{{ $label }}</p>
@@ -35,7 +35,7 @@
             @endforeach
         </section>
 
-        <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <section class="mt-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
             <div>
                 <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Event distribution</p>
                 <h2 class="mt-1 text-xl font-bold text-slate-900">Events by category</h2>
@@ -58,7 +58,7 @@
             </div>
         </section>
 
-        <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+        <section class="mt-6 rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
             <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                 <div>
                     <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Audit records</p>
@@ -117,7 +117,7 @@
                 <div class="relative pl-12 sm:pl-20">
                     <span class="absolute left-3 top-7 h-5 w-5 rounded-full ring-8 sm:left-8 {{ $markerClasses }}"></span>
                     <article wire:key="activity-log-{{ $log->id }}"
-                        class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:border-indigo-200 hover:shadow-md">
+                        class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:border-indigo-200 hover:shadow-md">
                         <div class="flex flex-col gap-5 p-5 lg:flex-row lg:items-start lg:justify-between sm:p-6">
                             <div class="min-w-0 flex-1">
                                 <div class="flex flex-wrap items-center gap-2">

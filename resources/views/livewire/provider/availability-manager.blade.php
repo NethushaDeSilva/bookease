@@ -29,7 +29,7 @@
         @endforeach
 
         @if (! $hasBusiness)
-            <section class="rounded-3xl border border-slate-200 bg-white px-6 py-16 text-center shadow-sm">
+            <section class="rounded-xl border border-slate-200 bg-white px-6 py-16 text-center shadow-sm">
                 <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600">
                     <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" /></svg>
                 </div>
@@ -38,7 +38,7 @@
                 <a href="{{ route('provider.business.profile') }}" class="mt-7 inline-flex rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-indigo-200 transition hover:bg-indigo-700">Create business profile</a>
             </section>
         @elseif ($services->isEmpty())
-            <section class="rounded-3xl border border-slate-200 bg-white px-6 py-16 text-center shadow-sm">
+            <section class="rounded-xl border border-slate-200 bg-white px-6 py-16 text-center shadow-sm">
                 <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600">
                     <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
                 </div>
@@ -116,7 +116,7 @@
                 </form>
             @endif
 
-            <section class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+            <section class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                 <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                     <div>
                         <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Your calendar</p>
@@ -142,7 +142,7 @@
 
             <div class="mt-5 space-y-4">
                 @forelse ($slots as $slot)
-                    <article wire:key="slot-{{ $slot->id }}" class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:border-indigo-200 hover:shadow-md">
+                    <article wire:key="slot-{{ $slot->id }}" class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:border-indigo-200 hover:shadow-md">
                         <div class="flex flex-col lg:flex-row">
                             <div class="flex w-full items-center gap-4 border-b border-slate-100 bg-slate-50 p-5 lg:w-64 lg:border-b-0 lg:border-r">
                                 <div class="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-2xl bg-indigo-600 text-white shadow-md shadow-indigo-200">

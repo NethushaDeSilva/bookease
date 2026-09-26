@@ -25,7 +25,7 @@
 
     <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         {{-- Search and filters --}}
-        <section class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+        <section class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
             <div class="grid gap-5 lg:grid-cols-[1fr_15rem]">
                 <div>
                     <label for="catalog-search" class="block text-sm font-bold text-slate-700">
@@ -106,7 +106,7 @@
         <div class="mt-5 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             @forelse ($services as $service)
                 <article wire:key="catalog-service-{{ $service->id }}"
-                    class="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-950/10">
+                    class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-950/10">
                     <div
                         class="relative flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-500 to-cyan-500">
                         <div aria-hidden="true"
@@ -186,7 +186,7 @@
                 </article>
             @empty
                 <div
-                    class="rounded-3xl border border-slate-200 bg-white p-12 text-center shadow-sm md:col-span-2 xl:col-span-3">
+                    class="rounded-xl border border-slate-200 bg-white p-12 text-center shadow-sm md:col-span-2 xl:col-span-3">
                     <span
                         class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600">
                         <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

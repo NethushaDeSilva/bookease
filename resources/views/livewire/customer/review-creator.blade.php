@@ -6,7 +6,7 @@
     <main class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         <div class="grid items-start gap-6 lg:grid-cols-[20rem_1fr]">
             {{-- Appointment summary --}}
-            <aside class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm lg:sticky lg:top-24">
+            <aside class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm lg:sticky lg:top-24">
                 <div
                     class="relative overflow-hidden bg-gradient-to-br from-indigo-700 via-indigo-600 to-cyan-500 p-6 text-white">
                     <div aria-hidden="true"
@@ -54,7 +54,7 @@
             </aside>
 
             {{-- Review form --}}
-            <form wire:submit="createReview" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <form wire:submit="createReview" class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
                 <div>
                     <p class="text-sm font-bold uppercase tracking-[0.16em] text-indigo-600">Your feedback</p>
                     <h2 class="mt-2 text-2xl font-extrabold text-slate-950">How was your appointment?</h2>

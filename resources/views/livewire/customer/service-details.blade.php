@@ -65,7 +65,7 @@
     <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         {{-- Service and business information --}}
         <div class="grid gap-6 lg:grid-cols-[1fr_23rem]">
-            <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <section class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
                 <p class="text-sm font-bold uppercase tracking-[0.16em] text-indigo-600">
                     Service information
                 </p>
@@ -80,7 +80,7 @@
                 </p>
             </section>
 
-            <aside class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <aside class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div class="flex items-center gap-4">
                     <span
                         class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 to-cyan-500 text-xl font-extrabold text-white shadow-lg shadow-indigo-500/15">
@@ -243,7 +243,7 @@
                                 @endphp
 
                                 <article wire:key="customer-slot-{{ $slot->id }}"
-                                    class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-950/10">
+                                    class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-950/10">
                                     <div class="flex items-start gap-4 p-6">
                                         <div
                                             class="w-20 shrink-0 overflow-hidden rounded-2xl border border-indigo-100 bg-indigo-50 text-center">
@@ -322,7 +322,7 @@
                                     </div>
                                 </article>
                 @empty
-                    <div class="rounded-3xl border border-slate-200 bg-white p-12 text-center shadow-sm md:col-span-2">
+                    <div class="rounded-xl border border-slate-200 bg-white p-12 text-center shadow-sm md:col-span-2">
                         <span
                             class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600">
                             <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -374,7 +374,7 @@
             <div class="mt-6 grid gap-5 md:grid-cols-2">
                 @forelse ($reviews as $review)
                                 <article wire:key="review-{{ $review->id }}"
-                                    class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                                     <div class="flex items-start justify-between gap-4">
                                         <div class="flex items-center gap-3">
                                             <span
@@ -412,7 +412,7 @@
                                     </p>
                                 </article>
                 @empty
-                    <div class="rounded-3xl border border-slate-200 bg-white p-10 text-center shadow-sm md:col-span-2">
+                    <div class="rounded-xl border border-slate-200 bg-white p-10 text-center shadow-sm md:col-span-2">
                         <span class="text-3xl text-amber-400">☆</span>
 
                         <h3 class="mt-3 text-lg font-extrabold text-slate-950">

@@ -15,7 +15,7 @@
 
         <div class="grid gap-6 lg:grid-cols-[20rem_minmax(0,1fr)]">
             <aside class="space-y-5">
-                <section class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+                <section class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                     <div class="bg-gradient-to-br from-indigo-600 to-indigo-800 p-6 text-white">
                         <div
                             class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 ring-1 ring-white/20">
@@ -67,7 +67,7 @@
                     </div>
                 </section>
 
-                <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <section class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                     <h3 class="font-bold text-slate-900">Profile tips</h3>
                     <ul class="mt-4 space-y-4 text-sm leading-6 text-slate-600">
                         <li class="flex gap-3"><span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-indigo-500"></span>Use
@@ -82,7 +82,7 @@
                 </section>
             </aside>
 
-            <form wire:submit="save" class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+            <form wire:submit="save" class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <div class="border-b border-slate-100 px-6 py-6 sm:px-8">
                     <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Public information</p>
                     <h2 class="mt-1 text-2xl font-bold text-slate-900">Business details</h2>

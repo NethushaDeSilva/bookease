@@ -31,7 +31,7 @@
         @enderror
 
         @if (! $hasBusiness)
-            <section class="rounded-3xl border border-slate-200 bg-white p-10 text-center shadow-sm">
+            <section class="rounded-xl border border-slate-200 bg-white p-10 text-center shadow-sm">
                 <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600">
                     <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 10h6M9 14h6M9 18h6" />
@@ -47,7 +47,7 @@
         @else
             {{-- Create/edit form --}}
             @if ($showForm)
-                <form wire:submit="save" class="mb-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-slate-950/5">
+                <form wire:submit="save" class="mb-8 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg shadow-slate-950/5">
                     <div class="flex items-center justify-between gap-4 border-b border-slate-100 bg-slate-50 px-6 py-5 sm:px-8">
                         <div>
                             <p class="text-xs font-bold uppercase tracking-[0.16em] text-indigo-600">Service editor</p>
@@ -108,7 +108,7 @@
             @endif
 
             {{-- Search and heading --}}
-            <section class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+            <section class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                 <div class="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
                     <div class="w-full max-w-2xl">
                         <label for="search" class="block text-sm font-bold text-slate-700">Search your services</label>
@@ -140,7 +140,7 @@
             {{-- Service cards --}}
             <div class="mt-5 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                 @forelse ($services as $service)
-                    <article wire:key="service-{{ $service->id }}" class="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-950/10">
+                    <article wire:key="service-{{ $service->id }}" class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-950/10">
                         <div class="relative flex h-32 items-center justify-center bg-gradient-to-br from-indigo-700 via-indigo-600 to-cyan-500">
                             <span class="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-2xl font-extrabold text-indigo-600">{{ strtoupper(substr($service->name, 0, 1)) }}</span>
                             <span class="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-bold {{ $service->is_active ? 'text-emerald-700' : 'text-slate-600' }}">
@@ -167,7 +167,7 @@
                         </div>
                     </article>
                 @empty
-                    <div class="rounded-3xl border border-slate-200 bg-white p-12 text-center shadow-sm md:col-span-2 xl:col-span-3">
+                    <div class="rounded-xl border border-slate-200 bg-white p-12 text-center shadow-sm md:col-span-2 xl:col-span-3">
                         <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600"><svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" /></svg></span>
                         <h2 class="mt-5 text-xl font-extrabold text-slate-950">No services found</h2>
                         <p class="mt-2 text-slate-600">Create your first service or change the search term.</p>

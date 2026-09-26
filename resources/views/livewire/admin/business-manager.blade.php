@@ -75,7 +75,7 @@
             </article>
         </section>
 
-        <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+        <section class="mt-6 rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
             <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                 <div>
                     <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Business directory</p>
@@ -134,7 +134,7 @@
                 @endphp
 
                 <article wire:key="admin-business-{{ $business->id }}"
-                    class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:border-indigo-200 hover:shadow-md">
+                    class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:border-indigo-200 hover:shadow-md">
                     <header
                         class="flex flex-col gap-5 border-b border-slate-100 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
                         <div class="flex min-w-0 items-center gap-4">

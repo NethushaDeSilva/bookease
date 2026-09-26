@@ -16,7 +16,7 @@
 
     <main class="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div class="flex items-start justify-between">
                     <div>
                         <p class="text-sm font-semibold text-slate-500">Total users</p>
@@ -35,7 +35,7 @@
                         suspended</span></div>
             </article>
 
-            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div class="flex items-start justify-between">
                     <div>
                         <p class="text-sm font-semibold text-slate-500">Businesses</p>
@@ -54,7 +54,7 @@
                         class="font-bold text-indigo-600 hover:text-indigo-800">Review</a></div>
             </article>
 
-            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div class="flex items-start justify-between">
                     <div>
                         <p class="text-sm font-semibold text-slate-500">Total bookings</p>
@@ -93,7 +93,7 @@
         </section>
 
         <section class="mt-6 grid gap-6 lg:grid-cols-[1.3fr_.7fr]">
-            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div class="flex items-center justify-between gap-4">
                     <div>
                         <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Operations</p>
@@ -160,7 +160,7 @@
                 </div>
             </div>
 
-            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Accounts</p>
@@ -185,7 +185,7 @@
             </div>
         </section>
 
-        <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <section class="mt-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                     <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Booking lifecycle</p>
@@ -217,7 +217,7 @@
             </div>
         </section>
 
-        <section class="mt-6 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <section class="mt-6 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
             <div class="flex items-center justify-between border-b border-slate-100 px-6 py-5">
                 <div>
                     <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Latest activity</p>
@@ -270,7 +270,7 @@
         </section>
 
         <section class="mt-6 grid gap-6 lg:grid-cols-2">
-            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Business health</p>
@@ -288,7 +288,7 @@
                 </div>
             </div>
 
-            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Audit trail</p>

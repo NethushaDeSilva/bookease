@@ -31,7 +31,7 @@
         @endif
 
         {{-- Search and filters --}}
-        <section class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+        <section class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
             <div class="grid gap-5 lg:grid-cols-[1fr_15rem]">
                 <div>
                     <label for="booking-search" class="block text-sm font-bold text-slate-700">
@@ -147,7 +147,7 @@
                         @endphp
 
                         <article wire:key="customer-booking-{{ $booking->id }}"
-                            class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg hover:shadow-slate-950/5">
+                            class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg hover:shadow-slate-950/5">
                             {{-- Card heading --}}
                             <div
                                 class="flex flex-col justify-between gap-5 border-b border-slate-100 px-6 py-6 sm:flex-row sm:items-start">
@@ -428,7 +428,7 @@
                             </div>
                         </article>
             @empty
-                <div class="rounded-3xl border border-slate-200 bg-white p-12 text-center shadow-sm">
+                <div class="rounded-xl border border-slate-200 bg-white p-12 text-center shadow-sm">
                     <span
                         class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600">
                         <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

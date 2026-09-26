@@ -465,7 +465,7 @@
 
                     @foreach ($features as $feature)
                         <article
-                            class="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-950/10">
+                            class="group rounded-xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-950/10">
                             <div
                                 class="flex h-12 w-12 items-center justify-center rounded-2xl bg-{{ $feature['color'] }}-400/15 text-{{ $feature['color'] }}-300">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
