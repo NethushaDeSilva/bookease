@@ -1,28 +1,15 @@
 <div class="min-h-screen bg-slate-50 pb-16">
-    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-violet-950 to-indigo-800">
-        <div class="absolute inset-0 opacity-30"
-            style="background-image: radial-gradient(circle at 15% 20%, rgba(34,211,238,.35), transparent 27%), radial-gradient(circle at 85% 12%, rgba(167,139,250,.45), transparent 25%);">
-        </div>
-        <div class="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-            <div class="flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
-                <div class="max-w-2xl">
-                    <div
-                        class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
-                        <span class="h-2 w-2 rounded-full bg-cyan-300"></span>Admin workspace
-                    </div>
-                    <h1 class="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">Manage businesses</h1>
-                    <p class="mt-3 max-w-xl text-base leading-7 text-indigo-100">Review provider profiles, approve new
-                        businesses, and control their visibility across BookEase.</p>
-                </div>
-                <a href="{{ route('dashboard') }}"
-                    class="inline-flex items-center gap-2 self-start rounded-xl border border-white/15 bg-white/10 px-4 py-2.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20 sm:self-auto">
-                    <span aria-hidden="true">←</span> Dashboard
-                </a>
-            </div>
-        </div>
-    </section>
+    <x-page-header eyebrow="Admin workspace" title="Manage businesses"
+        subtitle="Review provider profiles, approve new businesses, and control their visibility across BookEase.">
+        <x-slot:actions>
+            <a href="{{ route('dashboard') }}"
+                class="inline-flex items-center gap-2 self-start rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:bg-slate-50 sm:self-auto">
+                <span aria-hidden="true">←</span> Dashboard
+            </a>
+        </x-slot:actions>
+    </x-page-header>
 
-    <main class="relative z-10 mx-auto -mt-5 max-w-7xl px-4 sm:px-6 lg:px-8">
+    <main class="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         @if (session('success'))
             <div role="alert"
                 class="mb-5 flex items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm font-medium text-emerald-800 shadow-sm">

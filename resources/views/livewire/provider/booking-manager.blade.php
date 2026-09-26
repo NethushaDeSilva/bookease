@@ -1,21 +1,8 @@
 <div class="min-h-screen bg-slate-50 pb-16">
-    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-indigo-950 to-indigo-800">
-        <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 18% 18%, rgba(34,211,238,.35), transparent 28%), radial-gradient(circle at 85% 10%, rgba(129,140,248,.4), transparent 24%);"></div>
-        <div class="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-            <div class="max-w-2xl">
-                <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
-                    <span class="h-2 w-2 rounded-full bg-cyan-300"></span>
-                    Provider workspace
-                </div>
-                <h1 class="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">Bookings</h1>
-                <p class="mt-3 max-w-xl text-base leading-7 text-indigo-100">
-                    Review appointment requests, manage their progress, and keep customers informed.
-                </p>
-            </div>
-        </div>
-    </section>
+    <x-page-header eyebrow="Provider workspace" title="Bookings"
+        subtitle="Review appointment requests, manage their progress, and keep customers informed." />
 
-    <main class="relative z-10 mx-auto -mt-5 max-w-7xl px-4 sm:px-6 lg:px-8">
+    <main class="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         @if (session('success'))
             <div role="alert" class="mb-5 flex items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm font-medium text-emerald-800 shadow-sm">
                 <svg class="mt-0.5 h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>

@@ -1,102 +1,66 @@
 <div class="min-h-[calc(100vh-4rem)] bg-slate-50">
-    {{-- Service hero --}}
-    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-indigo-950 to-indigo-800">
-        <div aria-hidden="true" class="pointer-events-none absolute inset-0">
-            <div class="absolute -right-24 -top-32 h-96 w-96 rounded-full bg-cyan-400/20 blur-3xl"></div>
-
-            <div class="absolute -bottom-40 left-1/4 h-96 w-96 rounded-full bg-indigo-400/20 blur-3xl"></div>
-        </div>
-
-        <div class="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-            <a href="{{ route('customer.services.index') }}"
-                class="inline-flex items-center gap-2 text-sm font-bold text-indigo-200 transition hover:text-white">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6" />
-                </svg>
-
-                Back to services
-            </a>
-
-            <div class="mt-9 grid items-end gap-10 lg:grid-cols-[1fr_auto]">
-                <div class="max-w-3xl">
-                    <div
-                        class="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-200">
-                        <span class="h-2 w-2 rounded-full bg-cyan-300"></span>
-
-                        {{ $service->business->name }}
-                    </div>
-
-                    <h1 class="mt-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                        {{ $service->name }}
-                    </h1>
-
-                    <p class="mt-5 max-w-2xl text-lg leading-8 text-indigo-100">
-                        Choose an available appointment below and reserve your
-                        preferred time securely through BookEase.
+    <x-page-header :back="['href' => route('customer.services.index'), 'label' => 'Back to services']"
+        eyebrow="{{ $service->business->name }}" title="{{ $service->name }}"
+        subtitle="Choose an available appointment below and reserve your preferred time securely through BookEase.">
+        <x-slot:actions>
+            <div class="grid min-w-72 grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 shadow-sm">
+                <div class="bg-white p-5">
+                    <p class="text-xs font-bold uppercase tracking-wide text-slate-500">
+                        Price
                     </p>
-                </div>
 
-                <div
-                    class="grid min-w-72 grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 shadow-2xl backdrop-blur">
-                    <div class="bg-white/10 p-5">
-                        <p class="text-xs font-bold uppercase tracking-wide text-indigo-200">
-                            Price
-                        </p>
-
-                        <p class="mt-2 text-2xl font-extrabold text-white">
-                            Rs. {{ number_format(
+                    <p class="mt-2 text-2xl font-extrabold text-slate-950">
+                        Rs. {{ number_format(
     (float) $service->price,
     2
 ) }}
-                        </p>
-                    </div>
+                    </p>
+                </div>
 
-                    <div class="bg-white/10 p-5">
-                        <p class="text-xs font-bold uppercase tracking-wide text-indigo-200">
-                            Duration
-                        </p>
+                <div class="bg-white p-5">
+                    <p class="text-xs font-bold uppercase tracking-wide text-slate-500">
+                        Duration
+                    </p>
 
-                        <p class="mt-2 text-2xl font-extrabold text-white">
-                            {{ $service->duration_minutes }}
-                            <span class="text-sm font-semibold text-indigo-200">
-                                min
-                            </span>
-                        </p>
-                    </div>
+                    <p class="mt-2 text-2xl font-extrabold text-slate-950">
+                        {{ $service->duration_minutes }}
+                        <span class="text-sm font-semibold text-slate-500">
+                            min
+                        </span>
+                    </p>
+                </div>
 
-                    <div class="col-span-2 border-t border-white/10 bg-white/10 p-5">
-                        <div class="flex items-center justify-between gap-4">
-                            <div>
-                                <p class="text-xs font-bold uppercase tracking-wide text-indigo-200">
-                                    Customer rating
-                                </p>
+                <div class="col-span-2 bg-white p-5">
+                    <div class="flex items-center justify-between gap-4">
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-wide text-slate-500">
+                                Customer rating
+                            </p>
 
-                                <p class="mt-2 font-bold text-white">
-                                    @if ($service->reviews_avg_rating !== null)
-                                                                        {{ number_format(
-                                            (float) $service->reviews_avg_rating,
-                                            1
-                                        ) }}
-                                                                        out of 5
-                                    @else
-                                        New service
-                                    @endif
-                                </p>
-                            </div>
-
-                            @if ($service->reviews_avg_rating !== null)
-                                <span
-                                    class="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-300/15 text-xl text-amber-300">
-                                    ★
-                                </span>
-                            @endif
+                            <p class="mt-2 font-bold text-slate-950">
+                                @if ($service->reviews_avg_rating !== null)
+                                                                    {{ number_format(
+                                        (float) $service->reviews_avg_rating,
+                                        1
+                                    ) }}
+                                                                    out of 5
+                                @else
+                                    New service
+                                @endif
+                            </p>
                         </div>
+
+                        @if ($service->reviews_avg_rating !== null)
+                            <span
+                                class="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-xl text-amber-500">
+                                ★
+                            </span>
+                        @endif
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </x-slot:actions>
+    </x-page-header>
 
     <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         {{-- Service and business information --}}

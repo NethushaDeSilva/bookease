@@ -1,41 +1,7 @@
 <div class="min-h-[calc(100vh-4rem)] bg-slate-50">
-    {{-- Page hero --}}
-    <section class="relative overflow-hidden border-b border-indigo-100 bg-white">
-        <div aria-hidden="true" class="pointer-events-none absolute inset-0">
-            <div class="absolute -right-24 -top-32 h-96 w-96 rounded-full bg-cyan-200/50 blur-3xl"></div>
-            <div class="absolute -left-24 top-10 h-80 w-80 rounded-full bg-indigo-200/40 blur-3xl"></div>
-        </div>
-
-        <div class="relative mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-            <a href="{{ route('customer.bookings.index') }}"
-                class="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 transition hover:text-indigo-800">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6" />
-                </svg>
-                Back to my bookings
-            </a>
-
-            <div class="mt-8 max-w-3xl">
-                <div
-                    class="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-700">
-                    <span class="text-amber-500">★</span>
-                    Completed appointment
-                </div>
-
-                <h1 class="mt-5 text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">
-                    Share your
-                    <span class="bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">
-                        experience.
-                    </span>
-                </h1>
-
-                <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-                    Your honest feedback helps other customers choose confidently and helps service providers improve.
-                </p>
-            </div>
-        </div>
-    </section>
+    <x-page-header :back="['href' => route('customer.bookings.index'), 'label' => 'Back to my bookings']"
+        eyebrow="★ Completed appointment" title="Share your experience."
+        subtitle="Your honest feedback helps other customers choose confidently and helps service providers improve." />
 
     <main class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         <div class="grid items-start gap-6 lg:grid-cols-[20rem_1fr]">
@@ -47,7 +13,7 @@
                         class="absolute -right-10 -top-12 h-36 w-36 rounded-full border-[22px] border-white/10"></div>
 
                     <span
-                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/25 bg-white/15 text-xl font-extrabold shadow-lg backdrop-blur">
+                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-xl font-extrabold text-indigo-600 shadow-lg">
                         {{ strtoupper(substr($booking->service->name, 0, 1)) }}
                     </span>
 

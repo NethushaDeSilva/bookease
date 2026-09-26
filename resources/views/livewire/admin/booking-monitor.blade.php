@@ -1,19 +1,12 @@
 <div class="min-h-screen bg-slate-50 pb-16">
-    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-violet-950 to-indigo-800">
-        <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 15% 20%, rgba(34,211,238,.35), transparent 27%), radial-gradient(circle at 85% 12%, rgba(167,139,250,.45), transparent 25%);"></div>
-        <div class="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-            <div class="flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
-                <div class="max-w-2xl">
-                    <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200"><span class="h-2 w-2 rounded-full bg-cyan-300"></span>Admin workspace</div>
-                    <h1 class="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">Booking monitor</h1>
-                    <p class="mt-3 max-w-xl text-base leading-7 text-indigo-100">Track appointments, booking values, customers, and providers across the entire platform.</p>
-                </div>
-                <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-2 self-start rounded-xl border border-white/15 bg-white/10 px-4 py-2.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20 sm:self-auto"><span aria-hidden="true">←</span> Dashboard</a>
-            </div>
-        </div>
-    </section>
+    <x-page-header eyebrow="Admin workspace" title="Booking monitor"
+        subtitle="Track appointments, booking values, customers, and providers across the entire platform.">
+        <x-slot:actions>
+            <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-2 self-start rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:bg-slate-50 sm:self-auto"><span aria-hidden="true">←</span> Dashboard</a>
+        </x-slot:actions>
+    </x-page-header>
 
-    <main class="relative z-10 mx-auto -mt-5 max-w-7xl px-4 sm:px-6 lg:px-8">
+    <main class="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"><div class="flex items-start justify-between"><div><p class="text-sm font-semibold text-slate-500">Total bookings</p><p class="mt-2 text-3xl font-black text-slate-900">{{ number_format($metrics['total']) }}</p></div><span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3.75 18.75V7.5A2.25 2.25 0 0 1 6 5.25h12a2.25 2.25 0 0 1 2.25 2.25v11.25m-16.5 0A2.25 2.25 0 0 0 6 21h12a2.25 2.25 0 0 0 2.25-2.25m-16.5 0v-7.5h16.5v7.5" /></svg></span></div><p class="mt-5 border-t border-slate-100 pt-4 text-xs text-slate-500">All appointments created on BookEase</p></article>
             <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"><div class="flex items-start justify-between"><div><p class="text-sm font-semibold text-slate-500">Appointments today</p><p class="mt-2 text-3xl font-black text-blue-700">{{ number_format($metrics['today']) }}</p></div><span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-blue-600"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></span></div><p class="mt-5 border-t border-slate-100 pt-4 text-xs text-slate-500">Scheduled for the current date</p></article>

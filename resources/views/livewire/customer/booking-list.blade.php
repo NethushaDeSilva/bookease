@@ -1,47 +1,21 @@
 <div class="min-h-[calc(100vh-4rem)] bg-slate-50">
-    {{-- Page header --}}
-    <section class="relative overflow-hidden border-b border-indigo-100 bg-white">
-        <div aria-hidden="true" class="pointer-events-none absolute inset-0">
-            <div class="absolute -right-24 -top-32 h-96 w-96 rounded-full bg-cyan-200/50 blur-3xl"></div>
+    <x-page-header eyebrow="Your appointment history" title="My bookings"
+        subtitle="View upcoming appointments, track booking statuses, manage cancellations and review completed services.">
+        @if (Auth::user()->isCustomer())
+            <x-slot:actions>
+                <a href="{{ route('customer.services.index') }}"
+                    class="inline-flex w-fit items-center gap-3 rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 px-6 py-4 font-bold text-white shadow-xl shadow-indigo-500/20 transition hover:-translate-y-0.5 hover:from-indigo-700 hover:to-cyan-600">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path stroke-linecap="round" d="m20 20-3.5-3.5"></path>
+                    </svg>
 
-            <div class="absolute -left-24 top-10 h-80 w-80 rounded-full bg-indigo-200/40 blur-3xl"></div>
-        </div>
-
-        <div
-            class="relative mx-auto flex max-w-7xl flex-col justify-between gap-8 px-4 py-12 sm:px-6 lg:flex-row lg:items-center lg:px-8 lg:py-16">
-            <div class="max-w-3xl">
-                <div
-                    class="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-700">
-                    <span class="h-2 w-2 rounded-full bg-indigo-500"></span>
-
-                    Your appointment history
-                </div>
-
-                <h1 class="mt-5 text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">
-                    My
-                    <span class="bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">
-                        bookings
-                    </span>
-                </h1>
-
-                <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-                    View upcoming appointments, track booking statuses,
-                    manage cancellations and review completed services.
-                </p>
-            </div>
-
-            <a href="{{ route('customer.services.index') }}"
-                class="inline-flex w-fit items-center gap-3 rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 px-6 py-4 font-bold text-white shadow-xl shadow-indigo-500/20 transition hover:-translate-y-0.5 hover:from-indigo-700 hover:to-cyan-600">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    aria-hidden="true">
-                    <circle cx="11" cy="11" r="7"></circle>
-                    <path stroke-linecap="round" d="m20 20-3.5-3.5"></path>
-                </svg>
-
-                Browse services
-            </a>
-        </div>
-    </section>
+                    Browse services
+                </a>
+            </x-slot:actions>
+        @endif
+    </x-page-header>
 
     <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         @if (session('success'))
@@ -331,6 +305,7 @@
                                 {{-- Actions --}}
                                 <div
                                     class="mt-6 flex flex-col justify-between gap-4 border-t border-slate-100 pt-5 sm:flex-row sm:items-center">
+                                    @if (Auth::user()->isCustomer())
                                     <a href="{{ route(
                     'customer.services.show',
                     $booking->service
@@ -342,6 +317,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
                                         </svg>
                                     </a>
+                                    @endif
 
                                     <div class="flex flex-wrap items-center gap-3">
                                         @if (
@@ -475,7 +451,7 @@
                             class="mt-6 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50">
                             Clear filters
                         </button>
-                    @else
+                    @elseif (Auth::user()->isCustomer())
                         <a href="{{ route('customer.services.index') }}"
                             class="mt-6 inline-flex rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-indigo-500/20">
                             Find a service

@@ -25,13 +25,6 @@
             <div
                 class="absolute left-1/2 top-[-22rem] h-[52rem] w-[52rem] -translate-x-1/2 rounded-full bg-indigo-200/60 blur-3xl">
             </div>
-
-            <div class="absolute right-[-14rem] top-[30rem] h-[34rem] w-[34rem] rounded-full bg-cyan-200/50 blur-3xl">
-            </div>
-
-            <div
-                class="absolute bottom-[10rem] left-[-14rem] h-[34rem] w-[34rem] rounded-full bg-violet-200/50 blur-3xl">
-            </div>
         </div>
 
         {{-- Navigation --}}
@@ -117,20 +110,24 @@
                             One platform. Every appointment.
                         </div>
 
-                        <h1
-                            class="max-w-3xl text-5xl font-extrabold leading-[1.05] tracking-[-0.04em] text-slate-950 sm:text-6xl lg:text-7xl">
-                            Book services.
-                            <span
-                                class="bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">
-                                Grow businesses.
-                            </span>
-                        </h1>
+                        <x-page-header variant="app" bare>
+                            <x-slot:title>
+                                <span
+                                    class="block max-w-3xl text-5xl font-extrabold leading-[1.05] tracking-[-0.04em] text-slate-950 sm:text-6xl lg:text-7xl">
+                                    Book services.
+                                    <span
+                                        class="bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">
+                                        Grow businesses.
+                                    </span>
+                                </span>
+                            </x-slot:title>
 
-                        <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-                            BookEase connects customers with trusted service
-                            providers and turns appointment management into a
-                            simple, reliable experience.
-                        </p>
+                            <x-slot:subtitle>
+                                BookEase connects customers with trusted service
+                                providers and turns appointment management into a
+                                simple, reliable experience.
+                            </x-slot:subtitle>
+                        </x-page-header>
 
                         <div class="mt-10 flex flex-col gap-4 sm:flex-row">
                             @auth

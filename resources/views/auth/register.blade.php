@@ -1,15 +1,5 @@
 <x-guest-layout>
     <div class="relative min-h-screen overflow-hidden bg-white">
-        {{-- Background decoration --}}
-        <div aria-hidden="true" class="pointer-events-none absolute inset-0">
-            <div class="absolute left-[-12rem] top-[-12rem] h-[34rem] w-[34rem] rounded-full bg-indigo-200/50 blur-3xl">
-            </div>
-
-            <div
-                class="absolute bottom-[-14rem] right-[-10rem] h-[38rem] w-[38rem] rounded-full bg-cyan-200/50 blur-3xl">
-            </div>
-        </div>
-
         <div class="relative z-10 flex min-h-screen">
             {{-- Left information panel --}}
             <section
@@ -17,9 +7,6 @@
                 <div aria-hidden="true"
                     class="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-cyan-400/20 blur-3xl">
                 </div>
-
-                <div aria-hidden="true"
-                    class="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-indigo-400/20 blur-3xl"></div>
 
                 {{-- Brand --}}
                 <a href="{{ url('/') }}" class="relative flex w-fit items-center gap-3">
@@ -47,25 +34,22 @@
 
                 {{-- Main message --}}
                 <div class="relative max-w-xl py-12">
-                    <div
-                        class="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-200">
-                        <span class="h-2 w-2 rounded-full bg-cyan-300"></span>
+                    <x-page-header variant="marketing" bare eyebrow="Your next appointment starts here">
+                        <x-slot:title>
+                            <span class="text-5xl font-extrabold leading-tight tracking-[-0.04em] xl:text-6xl">
+                                One account.
+                                <span class="bg-gradient-to-r from-cyan-300 to-indigo-300 bg-clip-text text-transparent">
+                                    Endless possibilities.
+                                </span>
+                            </span>
+                        </x-slot:title>
 
-                        Your next appointment starts here
-                    </div>
-
-                    <h1 class="mt-7 text-5xl font-extrabold leading-tight tracking-[-0.04em] xl:text-6xl">
-                        One account.
-                        <span class="bg-gradient-to-r from-cyan-300 to-indigo-300 bg-clip-text text-transparent">
-                            Endless possibilities.
-                        </span>
-                    </h1>
-
-                    <p class="mt-6 max-w-lg text-lg leading-8 text-indigo-100">
-                        Join BookEase to discover trusted services, book
-                        convenient appointment times and manage everything from
-                        your personal dashboard.
-                    </p>
+                        <x-slot:subtitle>
+                            Join BookEase to discover trusted services, book
+                            convenient appointment times and manage everything from
+                            your personal dashboard.
+                        </x-slot:subtitle>
+                    </x-page-header>
 
                     <div class="mt-10 space-y-4">
                         @foreach (['Browse services from verified businesses', 'Book available appointments in real time', 'Manage bookings and submit trusted reviews'] as $benefit)

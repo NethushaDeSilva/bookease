@@ -1,39 +1,18 @@
 <div class="min-h-[calc(100vh-4rem)] bg-slate-50">
-    {{-- Provider home hero --}}
-    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-indigo-950 to-indigo-800 text-white">
-        <div aria-hidden="true" class="pointer-events-none absolute inset-0">
-            <div class="absolute -right-24 -top-32 h-96 w-96 rounded-full bg-cyan-400/20 blur-3xl"></div>
-            <div class="absolute -bottom-40 left-1/4 h-96 w-96 rounded-full bg-indigo-400/20 blur-3xl"></div>
-        </div>
-
-        <div class="relative mx-auto flex max-w-7xl flex-col justify-between gap-8 px-4 py-12 sm:px-6 lg:flex-row lg:items-end lg:px-8 lg:py-16">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-200">
-                    <span class="h-2 w-2 rounded-full bg-cyan-300"></span>
-                    Provider workspace
-                </div>
-
-                <h1 class="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl">
-                    Manage your
-                    <span class="bg-gradient-to-r from-cyan-300 to-indigo-300 bg-clip-text text-transparent">services.</span>
-                </h1>
-
-                <p class="mt-4 max-w-2xl text-lg leading-8 text-indigo-100">
-                    Create your offerings, manage pricing and availability, and keep everything customers see accurate and up to date.
-                </p>
-            </div>
-
-            @if ($hasBusiness && ! $showForm)
+    <x-page-header eyebrow="Provider workspace" title="Manage your services."
+        subtitle="Create your offerings, manage pricing and availability, and keep everything customers see accurate and up to date.">
+        @if ($hasBusiness && ! $showForm)
+            <x-slot:actions>
                 <button type="button" wire:click="startCreate"
-                    class="inline-flex w-fit items-center gap-2 rounded-2xl bg-white px-6 py-3.5 text-sm font-bold text-slate-950 shadow-xl transition hover:-translate-y-0.5 hover:bg-cyan-50">
+                    class="inline-flex w-fit items-center gap-2 rounded-2xl bg-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-indigo-700">
                     <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path stroke-linecap="round" d="M12 5v14M5 12h14" />
                     </svg>
                     Add new service
                 </button>
-            @endif
-        </div>
-    </section>
+            </x-slot:actions>
+        @endif
+    </x-page-header>
 
     <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         @if (session('success'))
@@ -163,8 +142,8 @@
                 @forelse ($services as $service)
                     <article wire:key="service-{{ $service->id }}" class="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-950/10">
                         <div class="relative flex h-32 items-center justify-center bg-gradient-to-br from-indigo-700 via-indigo-600 to-cyan-500">
-                            <span class="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/25 bg-white/15 text-2xl font-extrabold text-white backdrop-blur">{{ strtoupper(substr($service->name, 0, 1)) }}</span>
-                            <span class="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/90 px-3 py-1 text-xs font-bold {{ $service->is_active ? 'text-emerald-700' : 'text-slate-600' }}">
+                            <span class="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-2xl font-extrabold text-indigo-600">{{ strtoupper(substr($service->name, 0, 1)) }}</span>
+                            <span class="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-bold {{ $service->is_active ? 'text-emerald-700' : 'text-slate-600' }}">
                                 <span class="h-1.5 w-1.5 rounded-full {{ $service->is_active ? 'bg-emerald-500' : 'bg-slate-400' }}"></span>{{ $service->is_active ? 'Active' : 'Inactive' }}
                             </span>
                         </div>

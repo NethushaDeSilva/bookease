@@ -1,33 +1,7 @@
 <div class="min-h-[calc(100vh-4rem)] bg-slate-50">
-    {{-- Customer home hero --}}
-    <section class="relative overflow-hidden border-b border-indigo-100 bg-white">
-        <div aria-hidden="true" class="pointer-events-none absolute inset-0">
-            <div class="absolute -right-24 -top-32 h-96 w-96 rounded-full bg-cyan-200/50 blur-3xl"></div>
-            <div class="absolute -left-24 top-10 h-80 w-80 rounded-full bg-indigo-200/40 blur-3xl"></div>
-        </div>
-
-        <div
-            class="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_auto] lg:px-8 lg:py-16">
-            <div class="max-w-3xl">
-                <div
-                    class="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-700">
-                    <span class="h-2 w-2 rounded-full bg-indigo-500"></span>
-                    Welcome back, {{ Auth::user()->name }}
-                </div>
-
-                <h1 class="mt-5 text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">
-                    Find the right service,
-                    <span class="bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">
-                        book it with ease.
-                    </span>
-                </h1>
-
-                <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-                    Explore trusted local services, compare availability and reserve a convenient appointment from one
-                    simple place.
-                </p>
-            </div>
-
+    <x-page-header eyebrow="Welcome back, {{ Auth::user()->name }}" title="Find the right service, book it with ease."
+        subtitle="Explore trusted local services, compare availability and reserve a convenient appointment from one simple place.">
+        <x-slot:actions>
             <a href="{{ route('customer.bookings.index') }}"
                 class="inline-flex w-fit items-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 font-bold text-slate-800 shadow-lg shadow-slate-950/5 transition hover:-translate-y-0.5 hover:border-indigo-300 hover:text-indigo-700 hover:shadow-xl">
                 <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
@@ -46,8 +20,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
                 </svg>
             </a>
-        </div>
-    </section>
+        </x-slot:actions>
+    </x-page-header>
 
     <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         {{-- Search and filters --}}
@@ -140,18 +114,18 @@
                         <div aria-hidden="true" class="absolute -bottom-16 -left-10 h-40 w-40 rounded-full bg-white/10">
                         </div>
                         <span
-                            class="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-white/25 bg-white/15 text-4xl font-extrabold text-white shadow-xl backdrop-blur">
+                            class="relative flex h-20 w-20 items-center justify-center rounded-3xl bg-white text-4xl font-extrabold text-indigo-600 shadow-xl">
                             {{ strtoupper(substr($service->name, 0, 1)) }}
                         </span>
 
                         @if ($service->available_slots_count > 0)
                             <span
-                                class="absolute right-4 top-4 rounded-full border border-white/30 bg-white/90 px-3 py-1 text-xs font-bold text-emerald-700 shadow-sm">
+                                class="absolute right-4 top-4 rounded-full bg-white px-3 py-1 text-xs font-bold text-emerald-700 shadow-sm">
                                 {{ $service->available_slots_count }} available
                             </span>
                         @else
                             <span
-                                class="absolute right-4 top-4 rounded-full border border-white/20 bg-slate-900/70 px-3 py-1 text-xs font-bold text-white backdrop-blur">
+                                class="absolute right-4 top-4 rounded-full bg-slate-900 px-3 py-1 text-xs font-bold text-white shadow-sm">
                                 No slots
                             </span>
                         @endif

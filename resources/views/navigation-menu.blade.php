@@ -27,7 +27,7 @@
             ]);
 @endphp
 
-<nav x-data="{ open: false }" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 shadow-sm shadow-slate-200/40 backdrop-blur-xl">
+<nav x-data="{ open: false }" class="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-sm shadow-slate-200/40">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-[4.5rem] items-center justify-between gap-4">
             <div class="flex min-w-0 items-center gap-7 lg:gap-10">
@@ -101,6 +101,9 @@
                             </div>
                             <div class="py-1">
                                 <x-dropdown-link href="{{ route('profile.show') }}">{{ __('Profile settings') }}</x-dropdown-link>
+                                @if ($currentUser->isProvider())
+                                    <x-dropdown-link href="{{ route('customer.bookings.index') }}">{{ __('My appointments') }}</x-dropdown-link>
+                                @endif
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())<x-dropdown-link href="{{ route('api-tokens.index') }}">{{ __('API Tokens') }}</x-dropdown-link>@endif
                             </div>
                             <div class="border-t border-slate-100 py-1">
@@ -143,6 +146,9 @@
 
                 <div class="mt-2 space-y-1">
                     <a href="{{ route('profile.show') }}" class="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-700">{{ __('Profile settings') }}</a>
+                    @if ($currentUser->isProvider())
+                        <a href="{{ route('customer.bookings.index') }}" class="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-700">{{ __('My appointments') }}</a>
+                    @endif
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())<a href="{{ route('api-tokens.index') }}" class="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-700">{{ __('API Tokens') }}</a>@endif
                     <form method="POST" action="{{ route('logout') }}">@csrf<button type="submit" class="block w-full rounded-xl px-4 py-3 text-left text-sm font-bold text-rose-600 hover:bg-rose-50">{{ __('Log Out') }}</button></form>
                 </div>

@@ -1,35 +1,20 @@
 <div class="min-h-screen bg-slate-50 pb-16" wire:poll.30s>
-    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-violet-950 to-indigo-800">
-        <div class="absolute inset-0 opacity-30"
-            style="background-image: radial-gradient(circle at 15% 20%, rgba(34,211,238,.35), transparent 27%), radial-gradient(circle at 85% 12%, rgba(167,139,250,.45), transparent 25%);">
-        </div>
-        <div class="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-            <div class="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
-                <div class="max-w-2xl">
-                    <div
-                        class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
-                        <span class="h-2 w-2 animate-pulse rounded-full bg-cyan-300"></span>
-                        Live platform overview
-                    </div>
-                    <h1 class="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">Administration dashboard
-                    </h1>
-                    <p class="mt-3 max-w-xl text-base leading-7 text-indigo-100">Monitor platform health, manage users
-                        and businesses, and review booking activity from one place.</p>
-                </div>
-                <div
-                    class="inline-flex items-center gap-2 self-start rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-indigo-100 backdrop-blur lg:self-auto">
-                    <svg class="h-4 w-4 text-cyan-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    </svg>
-                    Automatically refreshes every 30 seconds
-                </div>
+    <x-page-header eyebrow="Live platform overview" title="Administration dashboard"
+        subtitle="Monitor platform health, manage users and businesses, and review booking activity from one place.">
+        <x-slot:actions>
+            <div
+                class="inline-flex items-center gap-2 self-start rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3 text-sm font-medium text-indigo-700 lg:self-auto">
+                <svg class="h-4 w-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                Automatically refreshes every 30 seconds
             </div>
-        </div>
-    </section>
+        </x-slot:actions>
+    </x-page-header>
 
-    <main class="relative z-10 mx-auto -mt-5 max-w-7xl px-4 sm:px-6 lg:px-8">
+    <main class="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div class="flex items-start justify-between">
