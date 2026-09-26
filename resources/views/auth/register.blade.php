@@ -85,28 +85,6 @@
                         @endforeach
                     </div>
 
-                    <div class="mt-10 rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                        <div class="flex items-center gap-4">
-                            <div class="flex -space-x-2">
-                                @foreach (['JD', 'AK', 'MS'] as $initials)
-                                    <span
-                                        class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-indigo-900 bg-gradient-to-br from-indigo-400 to-cyan-400 text-xs font-bold text-white">
-                                        {{ $initials }}
-                                    </span>
-                                @endforeach
-                            </div>
-
-                            <div>
-                                <p class="font-bold text-white">
-                                    Built for everyone
-                                </p>
-
-                                <p class="text-sm text-indigo-200">
-                                    Customers, providers and growing businesses
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <p class="relative text-sm text-indigo-200">
@@ -202,6 +180,30 @@
                                     class="block w-full rounded-2xl border-slate-200 bg-slate-50 py-3.5 pl-12 pr-4 text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-indigo-500 focus:bg-white focus:ring-indigo-500">
                             </div>
                         </div>
+
+                        <fieldset aria-describedby="account-role-help">
+                            <legend class="text-sm font-bold text-slate-700">I want to join as a</legend>
+                            <div class="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                                @foreach (['customer' => ['Customer', 'Find services and book appointments.'], 'provider' => ['Service provider', 'Offer services and manage bookings.']] as $role => [$label, $description])
+                                    <div class="relative">
+                                        <input id="role-{{ $role }}" name="role" type="radio" value="{{ $role }}"
+                                            @checked(old('role', 'customer') === $role) required
+                                            class="peer sr-only">
+                                        <label for="role-{{ $role }}"
+                                            class="flex h-full cursor-pointer flex-col rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-indigo-300 peer-checked:border-indigo-500 peer-checked:bg-indigo-50 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-indigo-600">
+                                            <span class="text-sm font-bold text-slate-900">{{ $label }}</span>
+                                            <span class="mt-1 text-xs leading-5 text-slate-600">{{ $description }}</span>
+                                        </label>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <p id="account-role-help" class="mt-2 text-xs leading-5 text-slate-500">
+                                Choose one. Customers can become providers later in Profile settings.
+                            </p>
+                            @error('role')
+                                <p class="mt-2 text-sm text-rose-700" role="alert">{{ $message }}</p>
+                            @enderror
+                        </fieldset>
 
                         {{-- Password --}}
                         <div>

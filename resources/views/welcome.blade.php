@@ -378,7 +378,7 @@
 
             {{-- Value strip --}}
             <section class="border-y border-slate-200 bg-slate-50/80">
-                <div class="mx-auto grid max-w-7xl gap-8 px-6 py-10 sm:grid-cols-3 lg:px-8">
+                <div class="mx-auto grid max-w-7xl gap-8 px-6 py-10 sm:grid-cols-2 lg:px-8">
                     <div class="text-center sm:text-left">
                         <p class="text-3xl font-extrabold text-slate-950">
                             24/7
@@ -386,16 +386,6 @@
 
                         <p class="mt-1 text-sm text-slate-400">
                             Online appointment access
-                        </p>
-                    </div>
-
-                    <div class="text-center sm:text-left">
-                        <p class="text-3xl font-extrabold text-slate-950">
-                            3 roles
-                        </p>
-
-                        <p class="mt-1 text-sm text-slate-400">
-                            Customers, providers and admins
                         </p>
                     </div>
 
