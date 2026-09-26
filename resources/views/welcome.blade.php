@@ -423,36 +423,42 @@
                                 'description' =>
                                     'Search active services, compare providers and find the right option quickly.',
                                 'color' => 'cyan',
+                                'icon' => '<circle cx="10.5" cy="10.5" r="6.5" /><path stroke-linecap="round" d="m20 20-4.3-4.3" />',
                             ],
                             [
                                 'title' => 'Live availability',
                                 'description' =>
                                     'See upcoming appointment times and remaining capacity before booking.',
                                 'color' => 'indigo',
+                                'icon' => '<circle cx="12" cy="12" r="9" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3.5 3.5" />',
                             ],
                             [
                                 'title' => 'Secure bookings',
                                 'description' =>
                                     'Book confidently with protected accounts and conflict-prevention rules.',
                                 'color' => 'emerald',
+                                'icon' => '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3 5 6v5c0 4.5 2.8 8.5 7 10 4.2-1.5 7-5.5 7-10V6l-7-3Z" /><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4" />',
                             ],
                             [
                                 'title' => 'Business management',
                                 'description' =>
                                     'Providers manage profiles, services, pricing and availability from one workspace.',
                                 'color' => 'violet',
+                                'icon' => '<rect x="3" y="7.5" width="18" height="12" rx="2" /><path stroke-linecap="round" stroke-linejoin="round" d="M8 7.5V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1.5" />',
                             ],
                             [
                                 'title' => 'Booking workflow',
                                 'description' =>
                                     'Confirm, complete, reject or cancel bookings with a clear status history.',
                                 'color' => 'sky',
+                                'icon' => '<rect x="6" y="4" width="12" height="16" rx="2" /><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 3.5h5a1 1 0 0 1 1 1V6h-7V4.5a1 1 0 0 1 1-1Z" /><path stroke-linecap="round" stroke-linejoin="round" d="m9.5 13.5 1.8 1.8L14.5 12" />',
                             ],
                             [
                                 'title' => 'Trusted reviews',
                                 'description' =>
                                     'Customers can review completed appointments and help others choose confidently.',
                                 'color' => 'amber',
+                                'icon' => '<path stroke-linecap="round" stroke-linejoin="round" d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z" />',
                             ],
                         ];
                     @endphp
@@ -464,7 +470,7 @@
                                 class="flex h-12 w-12 items-center justify-center rounded-2xl bg-{{ $feature['color'] }}-400/15 text-{{ $feature['color'] }}-300">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6" />
+                                    {!! $feature['icon'] !!}
                                 </svg>
                             </div>
 
