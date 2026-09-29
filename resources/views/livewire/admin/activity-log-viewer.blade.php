@@ -1,5 +1,5 @@
 <div class="min-h-screen bg-slate-50 pb-16">
-    <x-page-header eyebrow="Admin workspace" title="Activity logs"
+    <x-page-header title="Activity logs"
         subtitle="Inspect the platform audit trail and trace important user, business, service, and booking events.">
         <x-slot:actions>
             <a href="{{ route('dashboard') }}"

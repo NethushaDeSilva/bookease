@@ -1,5 +1,5 @@
 <div class="min-h-screen bg-slate-50 pb-16">
-    <x-page-header eyebrow="Admin workspace" title="Booking monitor"
+    <x-page-header title="Booking monitor"
         subtitle="Track appointments, booking values, customers, and providers across the entire platform.">
         <x-slot:actions>
             <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-2 self-start rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:bg-slate-50 sm:self-auto"><span aria-hidden="true">←</span> Dashboard</a>

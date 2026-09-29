@@ -1,5 +1,5 @@
 <div class="min-h-[calc(100vh-4rem)] bg-slate-50">
-    <x-page-header eyebrow="Welcome back, {{ Auth::user()->name }}" title="Find the right service, book it with ease."
+    <x-page-header title="Find the right service, book it with ease."
         subtitle="Explore trusted local services, compare availability and reserve a convenient appointment from one simple place.">
         <x-slot:actions>
             <a href="{{ route('customer.bookings.index') }}"

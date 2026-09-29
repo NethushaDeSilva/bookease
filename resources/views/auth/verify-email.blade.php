@@ -13,12 +13,11 @@
                     </span>
                     <span>
                         <span class="block text-xl font-extrabold tracking-tight">BookEase</span>
-                        <span class="block text-[10px] font-semibold uppercase tracking-[0.24em] text-indigo-200">Booking simplified</span>
                     </span>
                 </a>
 
                 <div class="relative max-w-xl py-12">
-                    <x-page-header variant="marketing" bare eyebrow="One final step">
+                    <x-page-header variant="marketing" bare>
                         <x-slot:title>
                             <span class="text-5xl font-extrabold leading-tight tracking-[-0.04em] xl:text-6xl">
                                 Your BookEase account is almost
@@ -62,8 +61,7 @@
                     </a>
 
                     <div>
-                        <p class="text-sm font-bold uppercase tracking-[0.2em] text-indigo-600">Email verification</p>
-                        <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-slate-950">Check your inbox</h1>
+                        <h1 class="text-4xl font-extrabold tracking-tight text-slate-950">Check your inbox</h1>
                         <p class="mt-3 leading-7 text-slate-600">We sent a verification link to <span class="font-semibold text-slate-800">{{ auth()->user()->email }}</span>. Select the link in that email to activate your account.</p>
                     </div>
 

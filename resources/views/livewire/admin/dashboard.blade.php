@@ -1,5 +1,5 @@
 <div class="min-h-screen bg-slate-50 pb-16" wire:poll.30s>
-    <x-page-header eyebrow="Live platform overview" title="Administration dashboard"
+    <x-page-header title="Administration dashboard"
         subtitle="Monitor platform health, manage users and businesses, and review booking activity from one place.">
         <x-slot:actions>
             <div

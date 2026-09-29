@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\BusinessStatus;
+use App\Enums\UserStatus;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -69,7 +70,11 @@ class Service extends Model
         return $query
             ->active()
             ->whereHas('business', function (Builder $query): void {
-                $query->where('status', BusinessStatus::Active->value);
+                $query
+                    ->where('status', BusinessStatus::Active->value)
+                    ->whereHas('owner', function (Builder $query): void {
+                        $query->where('status', UserStatus::Active->value);
+                    });
             });
     }
 

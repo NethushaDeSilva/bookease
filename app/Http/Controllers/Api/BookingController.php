@@ -32,9 +32,9 @@ class BookingController extends Controller
         $user = $request->user();
 
         abort_unless(
-            $user instanceof User && $user->isCustomer(),
+            $user instanceof User && ($user->isCustomer() || $user->isProvider()),
             403,
-            'Only customers can access this booking endpoint.'
+            'Only customers and providers can access their personal appointments.'
         );
 
         $validated = $request->validate([
@@ -300,9 +300,11 @@ class BookingController extends Controller
         $user = $request->user();
 
         abort_unless(
-            $user instanceof User && $user->isCustomer(),
+            $user instanceof User
+                && ($user->isCustomer() || $user->isProvider())
+                && $booking->customer_id === $user->id,
             403,
-            'Only customers can access this booking endpoint.'
+            'You can only access your own personal appointments here.'
         );
 
         $booking->load([

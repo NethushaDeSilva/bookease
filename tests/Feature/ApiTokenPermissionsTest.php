@@ -20,26 +20,26 @@ class ApiTokenPermissionsTest extends TestCase
             $this->markTestSkipped('API support is not enabled.');
         }
 
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::factory()->create());
 
         $token = $user->tokens()->create([
             'name' => 'Test Token',
             'token' => Str::random(40),
-            'abilities' => ['create', 'read'],
+            'abilities' => ['bookings:create', 'services:read'],
         ]);
 
         Livewire::test(ApiTokenManager::class)
             ->set(['managingPermissionsFor' => $token])
             ->set(['updateApiTokenForm' => [
                 'permissions' => [
-                    'delete',
+                    'bookings:cancel',
                     'missing-permission',
                 ],
             ]])
             ->call('updateApiToken');
 
-        $this->assertTrue($user->fresh()->tokens->first()->can('delete'));
-        $this->assertFalse($user->fresh()->tokens->first()->can('read'));
+        $this->assertTrue($user->fresh()->tokens->first()->can('bookings:cancel'));
+        $this->assertFalse($user->fresh()->tokens->first()->can('services:read'));
         $this->assertFalse($user->fresh()->tokens->first()->can('missing-permission'));
     }
 }

@@ -1,5 +1,5 @@
 <div class="min-h-screen bg-slate-50 pb-16">
-    <x-page-header eyebrow="Provider workspace" title="Bookings"
+    <x-page-header title="Bookings"
         subtitle="Review appointment requests, manage their progress, and keep customers informed." />
 
     <main class="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">

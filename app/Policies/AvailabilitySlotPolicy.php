@@ -38,7 +38,8 @@ class AvailabilitySlotPolicy
             && $availabilitySlot->is_active
             && $availabilitySlot->starts_at->isFuture()
             && $availabilitySlot->service->is_active
-            && $availabilitySlot->service->business->isActive();
+            && $availabilitySlot->service->business->isActive()
+            && $availabilitySlot->service->business->owner->isActive();
     }
 
     public function create(User $user): bool

@@ -19,21 +19,21 @@ class CreateApiTokenTest extends TestCase
             $this->markTestSkipped('API support is not enabled.');
         }
 
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::factory()->create());
 
         Livewire::test(ApiTokenManager::class)
             ->set(['createApiTokenForm' => [
                 'name' => 'Test Token',
                 'permissions' => [
-                    'read',
-                    'update',
+                    'services:read',
+                    'bookings:create',
                 ],
             ]])
             ->call('createApiToken');
 
         $this->assertCount(1, $user->fresh()->tokens);
         $this->assertEquals('Test Token', $user->fresh()->tokens->first()->name);
-        $this->assertTrue($user->fresh()->tokens->first()->can('read'));
-        $this->assertFalse($user->fresh()->tokens->first()->can('delete'));
+        $this->assertTrue($user->fresh()->tokens->first()->can('services:read'));
+        $this->assertFalse($user->fresh()->tokens->first()->can('bookings:cancel'));
     }
 }

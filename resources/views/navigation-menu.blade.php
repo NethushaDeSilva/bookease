@@ -35,10 +35,7 @@
                     <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-400 text-white shadow-lg shadow-indigo-500/25 transition group-hover:-translate-y-0.5 group-hover:shadow-indigo-500/35">
                         <x-application-mark class="h-5 w-5" />
                     </span>
-                    <span class="hidden sm:block">
-                        <span class="block text-lg font-extrabold leading-none tracking-tight text-slate-950">BookEase</span>
-                        <span class="mt-1 block text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">Booking simplified</span>
-                    </span>
+                    <span class="hidden text-lg font-extrabold leading-none tracking-tight text-slate-950 sm:block">BookEase</span>
                 </a>
 
                 <div class="hidden items-center gap-1 md:flex">

@@ -1,5 +1,5 @@
 <div class="min-h-[calc(100vh-4rem)] bg-slate-50">
-    <x-page-header eyebrow="Provider workspace" title="Manage your services."
+    <x-page-header title="Manage your services."
         subtitle="Create your offerings, manage pricing and availability, and keep everything customers see accurate and up to date.">
         @if ($hasBusiness && ! $showForm)
             <x-slot:actions>

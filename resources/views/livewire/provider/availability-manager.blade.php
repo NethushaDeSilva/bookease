@@ -1,5 +1,5 @@
 <div class="min-h-screen bg-slate-50 pb-16">
-    <x-page-header eyebrow="Provider workspace" title="Availability"
+    <x-page-header title="Availability"
         subtitle="Build a bookable schedule for your services and keep every appointment slot under control.">
         @if ($hasBusiness && $services->isNotEmpty() && ! $showForm)
             <x-slot:actions>

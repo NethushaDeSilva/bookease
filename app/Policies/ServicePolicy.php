@@ -30,6 +30,7 @@ class ServicePolicy
         if (
             $service->is_active
             && $service->business->isActive()
+            && $service->business->owner->isActive()
         ) {
             return true;
         }

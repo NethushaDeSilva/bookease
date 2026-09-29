@@ -1,7 +1,6 @@
 @props([
     'variant' => 'app',
     'bare' => false,
-    'eyebrow' => null,
     'title' => null,
     'subtitle' => null,
     'back' => null,
@@ -9,12 +8,6 @@
 
 @php
     $isMarketing = $variant === 'marketing';
-
-    $eyebrowClasses = $isMarketing
-        ? 'border-white/15 bg-white/10 text-cyan-200'
-        : 'border-indigo-200 bg-indigo-50 text-indigo-700';
-
-    $eyebrowDotClasses = $isMarketing ? 'bg-cyan-300' : 'bg-indigo-500';
 
     $titleClasses = $isMarketing
         ? 'text-3xl text-white sm:text-4xl'
@@ -47,14 +40,7 @@
 
     <div class="flex flex-col gap-6 {{ $back ? 'mt-6' : '' }} sm:flex-row sm:items-end sm:justify-between">
         <div class="max-w-2xl">
-            @if ($eyebrow)
-                <div class="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] {{ $eyebrowClasses }}">
-                    <span class="h-2 w-2 rounded-full {{ $eyebrowDotClasses }}"></span>
-                    {{ $eyebrow }}
-                </div>
-            @endif
-
-            <h1 class="{{ $eyebrow ? 'mt-4' : '' }} font-bold tracking-tight {{ $titleClasses }}">
+            <h1 class="font-bold tracking-tight {{ $titleClasses }}">
                 {{ $title }}
             </h1>
 

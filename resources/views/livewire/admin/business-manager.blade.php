@@ -1,5 +1,5 @@
 <div class="min-h-screen bg-slate-50 pb-16">
-    <x-page-header eyebrow="Admin workspace" title="Manage businesses"
+    <x-page-header title="Manage businesses"
         subtitle="Review provider profiles, approve new businesses, and control their visibility across BookEase.">
         <x-slot:actions>
             <a href="{{ route('dashboard') }}"

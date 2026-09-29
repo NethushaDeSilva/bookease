@@ -42,14 +42,8 @@
                         </svg>
                     </span>
 
-                    <span>
-                        <span class="block text-xl font-extrabold tracking-tight">
-                            BookEase
-                        </span>
-
-                        <span class="block text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-400">
-                            Booking simplified
-                        </span>
+                    <span class="text-xl font-extrabold tracking-tight">
+                        BookEase
                     </span>
                 </a>
 
@@ -98,18 +92,6 @@
             <section class="mx-auto max-w-7xl px-6 pb-24 pt-14 lg:px-8 lg:pb-32 lg:pt-24">
                 <div class="grid items-center gap-16 lg:grid-cols-[1.02fr_0.98fr]">
                     <div>
-                        <div
-                            class="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-semibold text-cyan-700 shadow-sm">
-                            <span class="relative flex h-2 w-2">
-                                <span
-                                    class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-300 opacity-75"></span>
-
-                                <span class="relative inline-flex h-2 w-2 rounded-full bg-cyan-300"></span>
-                            </span>
-
-                            One platform. Every appointment.
-                        </div>
-
                         <x-page-header variant="app" bare>
                             <x-slot:title>
                                 <span
@@ -401,11 +383,7 @@
             {{-- Features --}}
             <section id="features" class="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
                 <div class="max-w-3xl">
-                    <p class="text-sm font-bold uppercase tracking-[0.24em] text-cyan-300">
-                        Everything in one place
-                    </p>
-
-                    <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">
+                    <h2 class="text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">
                         A better booking experience for everyone.
                     </h2>
 
@@ -490,11 +468,7 @@
             <section id="how-it-works" class="border-y border-slate-200 bg-gradient-to-b from-slate-50 to-white">
                 <div class="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
                     <div class="text-center">
-                        <p class="text-sm font-bold uppercase tracking-[0.24em] text-indigo-300">
-                            Simple by design
-                        </p>
-
-                        <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">
+                        <h2 class="text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">
                             Book in three easy steps.
                         </h2>
                     </div>
@@ -529,11 +503,7 @@
 
                     <div class="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
                         <div class="max-w-3xl">
-                            <p class="text-sm font-bold uppercase tracking-[0.24em] text-cyan-200">
-                                Built for service providers
-                            </p>
-
-                            <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+                            <h2 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
                                 Turn availability into opportunity.
                             </h2>
 

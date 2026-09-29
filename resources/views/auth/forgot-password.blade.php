@@ -25,16 +25,12 @@
                         <span class="block text-xl font-extrabold tracking-tight">
                             BookEase
                         </span>
-
-                        <span class="block text-[10px] font-semibold uppercase tracking-[0.24em] text-indigo-200">
-                            Booking simplified
-                        </span>
                     </span>
                 </a>
 
                 {{-- Main message --}}
                 <div class="relative max-w-xl py-12">
-                    <x-page-header variant="marketing" bare eyebrow="Secure account recovery">
+                    <x-page-header variant="marketing" bare>
                         <x-slot:title>
                             <span class="text-5xl font-extrabold leading-tight tracking-[-0.04em] xl:text-6xl">
                                 Let’s get you
@@ -142,11 +138,7 @@
                     </div>
 
                     <div>
-                        <p class="text-sm font-bold uppercase tracking-[0.2em] text-indigo-600">
-                            Password recovery
-                        </p>
-
-                        <h2 class="mt-3 text-4xl font-extrabold tracking-tight text-slate-950">
+                        <h2 class="text-4xl font-extrabold tracking-tight text-slate-950">
                             Forgot your password?
                         </h2>
 

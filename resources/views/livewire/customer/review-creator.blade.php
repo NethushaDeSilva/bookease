@@ -1,6 +1,5 @@
 <div class="min-h-[calc(100vh-4rem)] bg-slate-50">
-    <x-page-header :back="['href' => route('customer.bookings.index'), 'label' => 'Back to my bookings']"
-        eyebrow="★ Completed appointment" title="Share your experience."
+    <x-page-header :back="['href' => route('customer.bookings.index'), 'label' => 'Back to my bookings']" title="Share your experience."
         subtitle="Your honest feedback helps other customers choose confidently and helps service providers improve." />
 
     <main class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">

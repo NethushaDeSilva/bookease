@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 
 #[Layout('layouts.app')]
@@ -19,6 +20,7 @@ class BusinessProfile extends Component
 {
     use AuthorizesRequests;
 
+    #[Locked]
     public ?int $businessId = null;
 
     public string $name = '';

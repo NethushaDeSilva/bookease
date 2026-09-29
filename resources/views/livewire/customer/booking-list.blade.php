@@ -1,5 +1,5 @@
 <div class="min-h-[calc(100vh-4rem)] bg-slate-50">
-    <x-page-header eyebrow="Your appointment history" title="My bookings"
+    <x-page-header title="My bookings"
         subtitle="View upcoming appointments, track booking statuses, manage cancellations and review completed services.">
         @if (Auth::user()->isCustomer())
             <x-slot:actions>

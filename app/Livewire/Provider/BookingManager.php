@@ -12,6 +12,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Locked;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -22,6 +23,7 @@ class BookingManager extends Component
     use AuthorizesRequests;
     use WithPagination;
 
+    #[Locked]
     public ?int $businessId = null;
 
     #[Url(as: 'q')]

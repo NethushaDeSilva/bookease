@@ -99,7 +99,7 @@ class BookingPolicy
 
     public function review(User $user, Booking $booking): bool
     {
-        return $user->isCustomer()
+        return ($user->isCustomer() || $user->isProvider())
             && $booking->customer_id === $user->id
             && $booking->status === BookingStatus::Completed
             && $booking->review()->doesntExist();

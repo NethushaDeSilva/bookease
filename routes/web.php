@@ -16,6 +16,7 @@ use App\Livewire\Admin\BookingMonitor;
 use App\Livewire\Admin\ActivityLogViewer;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\BecomeProviderController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,11 +36,16 @@ Route::middleware([
         }
 
         if ($user->isProvider()) {
-            return redirect()->route('provider.services.index');
+            return redirect()->route($user->business()->exists()
+                ? 'provider.services.index'
+                : 'provider.business.profile');
         }
 
         return view('dashboard');
     })->name('dashboard');
+
+    Route::post('/user/become-provider', BecomeProviderController::class)
+        ->name('profile.become-provider');
 
     Route::middleware('role:provider')
         ->prefix('provider')
@@ -71,6 +77,13 @@ Route::middleware([
         Route::get('/services/{service}/book/{slot}', BookingCreator::class)
             ->name('bookings.create');
 
+       });
+
+    // Providers retain access to appointments they booked before changing roles.
+    Route::middleware('role:customer,provider')
+        ->prefix('customer')
+        ->name('customer.')
+        ->group(function () {
         Route::get('/bookings', BookingList::class)
             ->name('bookings.index');
 

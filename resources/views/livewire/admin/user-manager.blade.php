@@ -1,5 +1,5 @@
 <div class="min-h-screen bg-slate-50 pb-16">
-    <x-page-header eyebrow="Admin workspace" title="Manage users"
+    <x-page-header title="Manage users"
         subtitle="Monitor customer and provider accounts, review their platform activity, and control account access.">
         <x-slot:actions>
             <a href="{{ route('dashboard') }}"

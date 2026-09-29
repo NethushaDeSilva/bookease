@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -25,6 +26,7 @@ class AvailabilityManager extends Component
     use AuthorizesRequests;
     use WithPagination;
 
+    #[Locked]
     public ?int $businessId = null;
 
     public ?int $slotId = null;

@@ -20,12 +20,12 @@ class DeleteApiTokenTest extends TestCase
             $this->markTestSkipped('API support is not enabled.');
         }
 
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::factory()->create());
 
         $token = $user->tokens()->create([
             'name' => 'Test Token',
             'token' => Str::random(40),
-            'abilities' => ['create', 'read'],
+            'abilities' => ['bookings:create', 'services:read'],
         ]);
 
         Livewire::test(ApiTokenManager::class)

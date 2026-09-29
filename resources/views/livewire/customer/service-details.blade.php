@@ -1,6 +1,5 @@
 <div class="min-h-[calc(100vh-4rem)] bg-slate-50">
-    <x-page-header :back="['href' => route('customer.services.index'), 'label' => 'Back to services']"
-        eyebrow="{{ $service->business->name }}" title="{{ $service->name }}"
+    <x-page-header :back="['href' => route('customer.services.index'), 'label' => 'Back to services']" title="{{ $service->name }}"
         subtitle="Choose an available appointment below and reserve your preferred time securely through BookEase.">
         <x-slot:actions>
             <div class="grid min-w-72 grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 shadow-sm">

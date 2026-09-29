@@ -1,5 +1,5 @@
 <div class="min-h-screen bg-slate-50 pb-16">
-    <x-page-header eyebrow="Provider workspace" title="My Business"
+    <x-page-header title="My Business"
         subtitle="Keep your public business information accurate, professional, and ready for customers." />
 
     <main class="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
@@ -85,7 +85,7 @@
             <form wire:submit="save" class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <div class="border-b border-slate-100 px-6 py-6 sm:px-8">
                     <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Public information</p>
-                    <h2 class="mt-1 text-2xl font-bold text-slate-900">Business details</h2>
+                    <h2 class="mt-1 text-2xl font-bold text-slate-900">My Business details</h2>
                     <p class="mt-2 text-sm leading-6 text-slate-500">This information helps customers understand and
                         contact your business.</p>
                 </div>

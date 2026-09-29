@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -20,6 +21,7 @@ class ServiceManager extends Component
     use AuthorizesRequests;
     use WithPagination;
 
+    #[Locked]
     public ?int $businessId = null;
 
     public ?int $serviceId = null;
