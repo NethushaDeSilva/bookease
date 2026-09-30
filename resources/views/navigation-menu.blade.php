@@ -12,7 +12,6 @@
             ['Businesses', route('admin.businesses.index'), 'admin.businesses.*'],
             ['Users', route('admin.users.index'), 'admin.users.*'],
             ['Bookings', route('admin.bookings.index'), 'admin.bookings.*'],
-            ['Activity', route('admin.activity.index'), 'admin.activity.*'],
         ]
         : ($currentUser->isProvider()
             ? [

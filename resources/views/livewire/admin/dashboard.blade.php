@@ -143,20 +143,6 @@
                                 appointments</span></span><span
                             class="text-cyan-600 transition group-hover:translate-x-1">→</span>
                     </a>
-                    <a href="{{ route('admin.activity.index') }}"
-                        class="group flex items-center gap-4 rounded-2xl border border-slate-200 p-4 transition hover:border-emerald-200 hover:bg-emerald-50/50">
-                        <span
-                            class="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700"><svg
-                                class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M10.5 6h9.75M10.5 12h9.75m-9.75 6h9.75M3.75 6H4.5v.75h-.75V6Zm0 6h.75v.75h-.75V12Zm0 6h.75v.75h-.75V18Z" />
-                            </svg></span>
-                        <span class="min-w-0 flex-1"><span class="block font-bold text-slate-900">Activity
-                                logs</span><span class="text-sm text-slate-500">Audit platform
-                                actions</span></span><span
-                            class="text-emerald-600 transition group-hover:translate-x-1">→</span>
-                    </a>
                 </div>
             </div>
 
@@ -293,8 +279,7 @@
                     <div>
                         <p class="text-xs font-bold uppercase tracking-widest text-indigo-600">Audit trail</p>
                         <h2 class="mt-1 text-xl font-bold text-slate-900">Recent activity</h2>
-                    </div><a href="{{ route('admin.activity.index') }}"
-                        class="text-sm font-bold text-indigo-600 hover:text-indigo-800">View logs</a>
+                    </div>
                 </div>
                 <div class="mt-4 divide-y divide-slate-100">
                     @forelse ($recentActivity->take(6) as $activity)

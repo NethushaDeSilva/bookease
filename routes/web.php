@@ -13,7 +13,6 @@ use App\Livewire\Provider\BookingManager;
 use App\Livewire\Admin\BusinessManager;
 use App\Livewire\Admin\UserManager;
 use App\Livewire\Admin\BookingMonitor;
-use App\Livewire\Admin\ActivityLogViewer;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BecomeProviderController;
@@ -104,7 +103,5 @@ Route::middleware([
             Route::get('/bookings', BookingMonitor::class)
             ->name('bookings.index');
 
-            Route::get('/activity-logs', ActivityLogViewer::class)
-            ->name('activity.index');
        });
 });

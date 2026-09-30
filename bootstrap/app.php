@@ -16,6 +16,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        // Railway terminates HTTPS before forwarding requests to the container.
+        if (env('RAILWAY_ENVIRONMENT_ID')) {
+            $middleware->trustProxies(at: '*');
+        }
+
         $middleware->alias([
         'role' => EnsureUserHasRole::class,
         'active' => EnsureUserIsActive::class,

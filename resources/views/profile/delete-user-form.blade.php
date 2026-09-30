@@ -9,7 +9,7 @@
 
     <x-slot name="content">
         <div class="max-w-xl text-sm text-gray-600">
-            {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
+            {{ __('Deleting your account permanently removes your access and clears your account identity. Pending and confirmed bookings will be cancelled. If you own a business, its services will become unavailable. Booking and review history is retained for other users under Deleted user. Download any information you need before continuing.') }}
         </div>
 
         <div class="mt-5">
@@ -25,7 +25,9 @@
             </x-slot>
 
             <x-slot name="content">
-                {{ __('Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+                {{ __('Are you sure you want to delete your account? Your access will be removed, pending and confirmed bookings cancelled, and any services you provide hidden. Shared history will be retained under Deleted user. Enter your password to confirm.') }}
+
+                <div role="alert"><x-input-error for="deletion" class="mt-3" /></div>
 
                 <div class="mt-4" x-data="{}" x-on:confirming-delete-user.window="setTimeout(() => $refs.password.focus(), 250)">
                     <x-input type="password" class="mt-1 block w-3/4"
