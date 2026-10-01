@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Enums\UserStatus;
+use App\Livewire\Customer\ServiceDetails;
 use App\Livewire\Provider\AvailabilityManager;
 use App\Livewire\Provider\ServiceManager;
 use App\Models\AvailabilitySlot;
@@ -18,6 +19,52 @@ use Tests\TestCase;
 class RoleSystemIntegrityTest extends TestCase
 {
     use RefreshDatabase;
+
+    public function test_customer_can_open_and_filter_a_visible_services_details(): void
+    {
+        $provider = User::factory()->provider()->create();
+        $business = Business::factory()->for($provider, 'owner')->create();
+        $service = Service::factory()->for($business)->create(['name' => 'Math tutoring']);
+        $slot = AvailabilitySlot::factory()->for($service)->create();
+        $customer = User::factory()->customer()->create();
+
+        $this->actingAs($customer);
+        $this->get(route('customer.services.index'))->assertOk()->assertSee('Math tutoring');
+        $this->get(route('customer.services.show', $service))->assertOk()->assertSee('Math tutoring');
+
+        Livewire::test(ServiceDetails::class, ['service' => $service])
+            ->assertOk()
+            ->set('dateFilter', $slot->starts_at->toDateString())
+            ->assertHasNoErrors()
+            ->assertOk()
+            ->call('clearDateFilter')
+            ->assertOk();
+    }
+
+    public function test_customer_cannot_open_a_pending_business_service(): void
+    {
+        $business = Business::factory()->pending()->create();
+        $service = Service::factory()->for($business)->create();
+
+        $this->actingAs(User::factory()->customer()->create())
+            ->get(route('customer.services.show', $service))
+            ->assertForbidden();
+    }
+
+    public function test_provider_can_open_their_service_editor(): void
+    {
+        $provider = User::factory()->provider()->create();
+        $business = Business::factory()->for($provider, 'owner')->create();
+        $service = Service::factory()->for($business)->create();
+
+        $this->actingAs($provider)->get(route('provider.services.index'))->assertOk();
+
+        Livewire::test(ServiceManager::class)
+            ->call('edit', $service->id)
+            ->assertHasNoErrors()
+            ->assertSet('serviceId', $service->id)
+            ->assertSet('name', $service->name);
+    }
 
     public function test_provider_cannot_tamper_business_id_to_read_another_providers_services(): void
     {

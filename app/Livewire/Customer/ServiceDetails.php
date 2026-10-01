@@ -59,7 +59,7 @@ class ServiceDetails extends Component
     {
         $service = Service::query()
             ->with([
-                'business:id,name,slug,description,phone,email,address,status',
+                'business:id,owner_id,name,slug,description,phone,email,address,status',
             ])
             ->withCount('reviews')
             ->withAvg('reviews', 'rating')
